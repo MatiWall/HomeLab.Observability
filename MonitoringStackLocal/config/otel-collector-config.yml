@@ -1,21 +1,39 @@
+# Receivers
 receivers:
   otlp:
     protocols:
       grpc:
         endpoint: 0.0.0.0:4317
       http:
-
+        endpoint: 0.0.0.0:4318
+        
+# Processors
 processors:
   batch:
 
+# Exporters
 exporters:
-  loki:
+  otlphttp/logs:
     endpoint: "http://loki:3100/otlp"
-
+    tls:
+      insecure: true
+  otlp/tempo:
+    endpoint: "http://tempo:4317"
+    tls:
+      insecure: true
+  prometheus:
+    endpoint: "0.0.0.0:8889"
+      
+# Pipelines
 service:
   pipelines:
     logs:
       receivers: [otlp]
-      processors: [batch]
-      exporters: [loki]
-      level: debug
+      #processors: [batch]
+      exporters: [otlphttp/logs]
+    traces:
+      receivers: [otlp]
+      exporters: [otlp/tempo]
+    metrics:
+      receivers: [otlp]
+      exporters: [prometheus]
