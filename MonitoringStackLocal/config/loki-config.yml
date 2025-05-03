@@ -1,0 +1,45 @@
+storage:
+  engine: boltdb-shipper
+  boltdb_shipper:
+    active_index_directory: /loki/index
+    shared_store: filesystem
+  filesystem:
+    directory: /loki/chunks
+
+server:
+  http:
+    address: 0.0.0.0:3100
+  grpc:
+    listen_port: 9095
+
+ingester:
+  wal:
+    enabled: true
+    dir: /loki/wal
+  chunk_idle_period: 5m
+  chunk_retain_period: 30s
+  max_chunk_size: 1048576
+  max_concurrent_flushes: 20
+
+schema_config:
+  configs:
+    - from: 2020-10-22
+      store: boltdb-shipper
+      schema: v11
+      index:
+        prefix: loki_index_
+        period: 24h
+
+compactor:
+  working_directory: /loki/compactor
+  shared_store: filesystem
+
+limits_config:
+  max_query_lookback: 0s
+  max_entries_limit: 5000
+  max_streams_limit: 10000
+
+frontend:
+  compress_responses: true
+
+log_level: info
