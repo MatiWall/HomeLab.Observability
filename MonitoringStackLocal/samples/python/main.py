@@ -1,17 +1,16 @@
 import logging
 import time
-from extensions.opentelemetry import configure_opentelemetry
 from extensions.configuration import set_defaults
 
 from opentelemetry.metrics import get_meter
 from opentelemetry.trace import get_tracer
 
 set_defaults(
-        system='TestSystem',
-        application='TestApplication',
-        deployable_unit='TestDeployableUnit',
+        name='TestName',
+        namespace='TestNamespace',
         version='0.0.1'
 )
+from extensions.opentelemetry import configure_opentelemetry
 logger = logging.getLogger(__name__)
 
 configure_opentelemetry(
@@ -23,7 +22,7 @@ meter = get_meter(__name__)
 tracer = get_tracer(__name__)
 # Create a counter
 request_counter = meter.create_counter(
-    name="app.request.count",
+    name="myapp_total",
     description="Total number of requests",
     unit="1"
 )

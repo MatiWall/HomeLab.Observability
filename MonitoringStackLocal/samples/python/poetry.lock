@@ -186,14 +186,14 @@ reference = "local-pypi"
 
 [[package]]
 name = "extensions-configuration"
-version = "0.2.0"
+version = "1.0.0"
 description = ""
 optional = false
 python-versions = ">=3.11,<4.0"
 groups = ["main"]
 files = [
-    {file = "extensions_configuration-0.2.0-py3-none-any.whl", hash = "sha256:9b59c634238d572bc47e4f5cc72fcfc42a2fb8b8abf37f41c7eb151fb5b0c9f7"},
-    {file = "extensions_configuration-0.2.0.tar.gz", hash = "sha256:29910dc98df7975105d1d0f1b0616bf4d760dbdd8817b676b8b9875fa1293a59"},
+    {file = "extensions_configuration-1.0.0-py3-none-any.whl", hash = "sha256:b88dbc77443e8951282dd80689086cc43b7ba49c1b20cd8371683465db0e2b05"},
+    {file = "extensions_configuration-1.0.0.tar.gz", hash = "sha256:82c92f6b601cbde3de5e1cf64cdcf8ad4568331d89b961fd00537b878c93f970"},
 ]
 
 [package.dependencies]
@@ -207,18 +207,18 @@ reference = "local-pypi"
 
 [[package]]
 name = "extensions-opentelemetry"
-version = "0.2.0"
+version = "1.0.0"
 description = ""
 optional = false
-python-versions = ">=3.11,<4.0"
+python-versions = ">=3.12,<4.0"
 groups = ["main"]
 files = [
-    {file = "extensions_opentelemetry-0.2.0-py3-none-any.whl", hash = "sha256:2f1941d06e3578e8736001acecd84f49a5f936d44cf9bba24a1c4d4dafa97edb"},
-    {file = "extensions_opentelemetry-0.2.0.tar.gz", hash = "sha256:b2d0cc3a0690069d93dc298dc3f0c8e55324a607cd25022a8206a5c07e10ebfe"},
+    {file = "extensions_opentelemetry-1.0.0-py3-none-any.whl", hash = "sha256:0606799a33aad0db75ceeb70a1790ec1524a6fc8ef42c4c3bf46d0d8bedfda0a"},
+    {file = "extensions_opentelemetry-1.0.0.tar.gz", hash = "sha256:cb5e3523e517c70369c14fc7073aa252e6d754b75beda787fa6c3f119dbe9bae"},
 ]
 
 [package.dependencies]
-extensions-configuration = ">=0.2.0,<0.3.0"
+extensions-configuration = "1.0.0"
 mkdocstrings = {version = ">=0.24.0,<0.25.0", extras = ["python"]}
 opentelemetry-api = ">=1.22.0,<2.0.0"
 opentelemetry-exporter-otlp = ">=1.22.0,<2.0.0"
@@ -1349,4 +1349,4 @@ reference = "local-pypi"
 [metadata]
 lock-version = "2.1"
 python-versions = "<4.0,>=3.12"
-content-hash = "7623a475ced02a546b41250bd2fa6451b6c1d85a3de13fe4d6da7c7dc7a8cbf8"
+content-hash = "6a73a8b165d068f35229f7af41d64d8b529ba9bf5075d3e6f13b5c6a54db81af"

@@ -1,15 +1,15 @@
 [project]
-name = "samples"
+name = "python"
 version = "0.1.0"
 description = ""
 authors = [
     {name = "Your Name",email = "you@example.com"}
 ]
-readme = "README.md"
 requires-python = "<4.0,>=3.12"
 dependencies = [
-    "extensions-opentelemetry (>=0.2.0,<0.3.0)"
+    "extensions-opentelemetry (==1.0.0)"
 ]
+package-mode = false
 
 
 [[tool.poetry.source]]
